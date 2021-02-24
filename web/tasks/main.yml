@@ -9,7 +9,7 @@
     - default-jre
 
 - name: enshure webapp is present
-  copy:
+  synchronize:
     src: "{{ src_path }}/hello-1.0.war"
     dest: "{{ dst_path }}"
   delegate_to: 10.129.0.36
