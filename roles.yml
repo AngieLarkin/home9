@@ -1,0 +1,14 @@
+---
+- name: build srv template
+  hosts: build
+  become: yes
+
+  roles:
+    - build
+
+- name: webapp deployment template
+  hosts: web
+  become: yes
+
+  roles:
+    - web
