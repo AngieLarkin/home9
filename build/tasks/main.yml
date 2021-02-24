@@ -3,7 +3,7 @@
 
 - name: install packages
   apt:
-    name: {{item}}
+    name: "{{ item }}"
     state: present
   with_items:
     - git
@@ -13,8 +13,8 @@
 - name: ensure boxfuse is present
   git:
     repo: "{{ box_repo }}"
-    dest: "{{dst_path}}"
+    dest: "{{ dst_path }}"
     clone: yes
 
 - name: build package
-  command: mvn package -f '{{dst_path}}/pom.xml'
+  command: mvn package -f '{{ dst_path }}/pom.xml'
