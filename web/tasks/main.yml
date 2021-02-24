@@ -6,7 +6,7 @@
     state: present
   with_items:
     - tomcat9
-    - defalt-jre
+    - default-jre
 
 - name: enshure webapp is present
   copy:
