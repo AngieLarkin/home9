@@ -1,2 +1,5 @@
 ---
 # defaults file for build
+
+box_repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+dst_path: /root/boxfuse-sample-java-war-hello

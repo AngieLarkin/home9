@@ -1,2 +1,5 @@
 ---
 # defaults file for web
+
+src_path: /root/boxfuse-sample-java-war-hello/target
+dst_path: /var/lib/tomcat9/webapps

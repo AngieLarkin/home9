@@ -1,2 +1,20 @@
 ---
 # tasks file for build
+
+- name: install packages
+  apt:
+    name: {{item}}
+    state: present
+  with_items:
+    - git
+    - maven
+    - default-jdk
+
+- name: ensure boxfuse is present
+  git:
+    repo: "{{ box_repo }}"
+    dest: "{{dst_path}}"
+    clone: yes
+
+- name: build package
+  command: mvn package -f '{{dst_path}}/pom.xml'

@@ -1,2 +1,17 @@
 ---
 # tasks file for web
+- name: ensure web server is present
+  apt:
+    name: { { item } }
+    state: present
+  with_items:
+    - tomcat9
+    - defalt-jre
+
+- name: enshure webapp is present
+  copy:
+    src: "{{src_path}}/hello-1.0.war"
+    dest: "{{dst_path}}"
+  delegate_to: 10.129.0.36
+  notify:
+    - restart tomcat9
